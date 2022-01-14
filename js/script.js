@@ -11,7 +11,7 @@ const btn = document.querySelector('button');
 btn.addEventListener('click', function () {
     const userWordValue = userWord.value;
     printWord.innerText = `Corretta: ${userWordValue}`;
-    console.log(userWordValue.length);
+    console.log(userWordValue);
     let contrario = '';
     for (let i = userWordValue.length - 1; i >= 0; i--) {
         let temp = userWordValue.charAt(i);
@@ -19,6 +19,11 @@ btn.addEventListener('click', function () {
 
     }
     console.log(contrario)
+    let message = 'La parola non è palindroma';
+    if (userWordValue === contrario) {
+        message = 'La parola è palindroma'
+    }
+    console.log(message)
 })
 
 // CONTROLLO SE E PALINDROMA
