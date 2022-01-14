@@ -52,9 +52,7 @@ function sum(num1, num2) {
 // CONTROLLO SE LA SOMMA E PARI O DISPARI
 function check(qualcosa) {
     tipo = "pari";
-    if (qualcosa % 2 !== 0) {
-        tipo = "dispari";
-    }
+    if (qualcosa % 2 !== 0) tipo = "dispari";
 
     return tipo;
 }
@@ -62,12 +60,12 @@ function check(qualcosa) {
 //CHI HA VINTO?
 function vittoria(scelta, tipo) {
     risultato = "UTENTE VINCE"
-    if (scelta !== tipo) {
-        risultato = "COMPUTER VINCE"
-    }
+    if (scelta !== tipo) risultato = "COMPUTER VINCE"
 
     return risultato;
 }
+
+
 
 
 
