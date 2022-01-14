@@ -11,11 +11,23 @@ Dichiariamo chi ha vinto.
 const num = document.getElementById('num');
 const choice = document.getElementById('choice');
 const buttonElement = document.querySelector('button');
-
+const numRandom = document.getElementById('numRandom');
+const numUser = document.getElementById('numUser');
 
 buttonElement.addEventListener('click', function () {
     const numValue = num.value;
     const choiceValue = choice.value;
-    console.log(numValue);
+    console.log("numero utente", numValue);
     console.log(choiceValue);
+    random()
+    numUser.innerText = `utente: ${numValue}`;
 })
+
+// GENERO UN NUMERO CASUALE
+function random() {
+    const numRand = Math.floor(Math.random() * 5) + 1;
+    console.log("numero random", numRand);
+    numRandom.innerText = `computer: ${numRand}`;
+    return numRand;
+}
+
