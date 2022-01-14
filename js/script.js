@@ -4,14 +4,21 @@ Creare una funzione per capire se la parola inserita è palindroma
 */
 
 // PRENDO LA PAROLA INSERITA
-const userWorld = document.getElementById('word');
-const printWorld = document.getElementById('printWord');;
+const userWord = document.getElementById('word');
+const printWord = document.getElementById('printWord');;
 const btn = document.querySelector('button');
 
 btn.addEventListener('click', function () {
     const userWordValue = userWord.value;
-    printWord.innerText = userWordValue;
+    printWord.innerText = `Corretta: ${userWordValue}`;
+    console.log(userWordValue.length);
+    let contrario = '';
+    for (let i = userWordValue.length - 1; i >= 0; i--) {
+        let temp = userWordValue.charAt(i);
+        contrario += temp;
 
+    }
+    console.log(contrario)
 })
 
 // CONTROLLO SE E PALINDROMA
