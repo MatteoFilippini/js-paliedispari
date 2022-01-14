@@ -7,7 +7,10 @@ Creare una funzione per capire se la parola inserita è palindroma
 const userWord = document.getElementById('word');
 const printWord = document.getElementById('printWord');
 const invertWord = document.getElementById('invertita');
+const messageElement = document.getElementById('message');
 const btn = document.querySelector('button');
+let contrario = '';
+let message = 'La parola non è palindroma';
 
 btn.addEventListener('click', function () {
     // prendo il valore della parola
@@ -19,11 +22,11 @@ btn.addEventListener('click', function () {
     invertWord.innerText = `Invertita: ${contrario}`;
     // evoco la funzione che confronta la parola inserita e in suo contraio
     check(userWordValue, contrario);
+    messageElement.innerText = `${message}`;
 })
 
 // INVERTO LA PAROLA
 function invert(parola) {
-    let contrario = '';
     for (let i = parola.length - 1; i >= 0; i--) {
         let temp = parola.charAt(i);
         contrario += temp;
@@ -35,7 +38,6 @@ function invert(parola) {
 
 // CONFTONRO LA PAROLA
 function check(corretta, invertita) {
-    let message = 'La parola non è palindroma';
     if (corretta === invertita) message = 'La parola è palindroma';
 
     console.log(message)
