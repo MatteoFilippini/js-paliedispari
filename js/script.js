@@ -5,29 +5,39 @@ Creare una funzione per capire se la parola inserita è palindroma
 
 // PRENDO LA PAROLA INSERITA
 const userWord = document.getElementById('word');
-const printWord = document.getElementById('printWord');;
+const printWord = document.getElementById('printWord');
+const invertWord = document.getElementById('invertita');
 const btn = document.querySelector('button');
 
 btn.addEventListener('click', function () {
+    // prendo il valore della parola
     const userWordValue = userWord.value;
     printWord.innerText = `Corretta: ${userWordValue}`;
     console.log(userWordValue);
-    let contrario = '';
-    for (let i = userWordValue.length - 1; i >= 0; i--) {
-        let temp = userWordValue.charAt(i);
-        contrario += temp;
-
-    }
-    console.log(contrario)
-    let message = 'La parola non è palindroma';
-    if (userWordValue === contrario) {
-        message = 'La parola è palindroma'
-    }
-    console.log(message)
+    // evoco la funzione che inverte la parola inserita
+    invert(userWordValue);
+    invertWord.innerText = `Invertita: ${contrario}`;
+    // evoco la funzione che confronta la parola inserita e in suo contraio
+    check(userWordValue, contrario);
 })
 
-// CONTROLLO SE E PALINDROMA
-    // PASSO TUTTO L'ARRAY
-    // SE IL VALORE DELLA PRIMA CELLA E UGUALE ALL ULTIMA ALLORA E PALINDROMA
-// STAMPO
+// INVERTO LA PAROLA
+function invert(parola) {
+    let contrario = '';
+    for (let i = parola.length - 1; i >= 0; i--) {
+        let temp = parola.charAt(i);
+        contrario += temp;
+    }
+    console.log(contrario);
+
+    return contrario;
+}
+
+// CONFTONRO LA PAROLA
+function check(corretta, invertita) {
+    let message = 'La parola non è palindroma';
+    if (corretta === invertita) message = 'La parola è palindroma';
+
+    console.log(message)
+}
 
